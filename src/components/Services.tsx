@@ -1,7 +1,16 @@
 import { useState } from 'react'
 import useReveal from '../hooks/useReveal'
 
-const services = [
+interface Service {
+  gif: string
+  tag: string
+  title: string
+  desc: string
+  color: string
+  filter: string
+}
+
+const services: Service[] = [
   { gif: '/logos/web.gif', tag: 'Desarrollo Web', title: 'Sitios y Aplicaciones Web', desc: 'Desde sitios corporativos hasta plataformas complejas. Código limpio, rápido y escalable.', color: '#4f46e5', filter: 'web' },
   { gif: '/logos/appmobil.gif', tag: 'Apps Móviles', title: 'Apps iOS y Android', desc: 'Apps nativas y multiplataforma, optimizadas para rendimiento y experiencia de usuario excepcional.', color: '#0ea5e9', filter: 'mobile' },
   { gif: '/logos/ladingpage.gif', tag: 'Landing Pages', title: 'Landing Pages de Alto Impacto', desc: 'Diseñadas para convertir visitantes en clientes. Veloces, modernas y orientadas a resultados.', color: '#f59e0b', filter: 'landing' },

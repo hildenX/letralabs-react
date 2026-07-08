@@ -1,15 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
 
-const stats = [
-  { target: 15, suffix: '+', label: 'Proyectos Entregados' },
-  { target: 10, suffix: '+', label: 'Clientes Satisfechos' },
-  { target: 3, suffix: '+', label: 'Años de Experiencia' },
+interface StatItem {
+  target: number
+  suffix: string
+  label: string
+}
+
+const stats: StatItem[] = [
+  { target: 50, suffix: '+', label: 'Proyectos Entregados' },
+  { target: 30, suffix: '+', label: 'Clientes Satisfechos' },
+  { target: 5, suffix: '+', label: 'Años de Experiencia' },
   { target: 100, suffix: '%', label: 'Tasa de Satisfacción' },
 ]
 
-function Counter({ target, suffix }) {
+function Counter({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0)
-  const ref = useRef()
+  const ref = useRef<HTMLSpanElement>(null)
   const done = useRef(false)
 
   useEffect(() => {

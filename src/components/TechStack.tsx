@@ -1,4 +1,10 @@
-const techs = [
+interface Tech {
+  name: string
+  color: string
+  text?: string
+}
+
+const techs: Tech[] = [
   { name: 'HTML5', color: '#e34f26' }, { name: 'CSS3', color: '#1572b6' },
   { name: 'JavaScript', color: '#f7df1e', text: '#222' }, { name: 'TypeScript', color: '#3178c6' },
   { name: 'React', color: '#61dafb', text: '#222' }, { name: 'Angular', color: '#dd0031' },
@@ -28,7 +34,7 @@ export default function TechStack() {
             <div
               key={i}
               className="tech-badge"
-              style={{ '--tc': t.color, color: t.text || '#fff' }}
+              style={{ '--tc': t.color, color: t.text ?? '#fff' }}
             >
               {t.name}
             </div>

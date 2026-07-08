@@ -1,4 +1,17 @@
-const plans = [
+interface Plan {
+  icon: string
+  name: string
+  desc: string
+  price: string
+  currency: string
+  features: [boolean, string][]
+  btn: string
+  btnText: string
+  featured: boolean
+  badge?: string
+}
+
+const plans: Plan[] = [
   {
     icon: 'fa-rocket', name: 'Landing Page', desc: 'Ideal para campañas y emprendimientos',
     price: '$150.000', currency: 'CLP',

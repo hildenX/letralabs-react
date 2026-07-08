@@ -1902,6 +1902,32 @@ a:focus {
   min-height: 600px;
 }
 
+.contact-inner {
+  display: flex;
+  min-height: 600px;
+}
+
+.contact-inner .contact-info-col {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.contact-inner .contact-form-col {
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+
+@media (max-width: 991px) {
+  .contact-inner {
+    flex-direction: column;
+  }
+  .contact-inner .contact-info-col,
+  .contact-inner .contact-form-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 /* Columna izquierda - oscura */
 .contact-info-col {
   background: linear-gradient(150deg, #0e1117 0%, #1a1f2e 100%);

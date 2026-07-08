@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
-import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Portfolio from './components/Portfolio'
 import Stats from './components/Stats'
 import About from './components/About'
 import Contact from './components/Contact'
+import Process from './components/Process'
 import Pricing from './components/Pricing'
 import TechStack from './components/TechStack'
 import FAQ from './components/FAQ'
@@ -33,16 +33,16 @@ function App() {
 
   return (
     <>
-      <Navbar />
       <Hero />
       <Services />
       <Portfolio />
       <Stats />
       <About />
+      <Contact />
+      <Process />
       <Pricing />
       <TechStack />
       <FAQ />
-      <Contact />
       <Footer />
       <WhatsAppFloat />
     </>

@@ -1,31 +1,49 @@
-const projects = [
+interface Project {
+  bg: string
+  logo: string
+  name: string
+  url: string
+  tag: string
+  tagClass: string
+  desc: string
+}
+
+const projects: Project[] = [
   {
     bg: 'linear-gradient(135deg, #4a0080 0%, #7c3aed 100%)',
     logo: '/pudu-logo-new.png',
     name: 'Pudú Tecnología',
     url: 'https://pudutecnologia.cl',
-    tags: ['Web Corporativa', 'SEO'],
+    tag: 'SAAS',
+    tagClass: '',
+    desc: 'Plataforma SaaS para gestión de tecnología y soporte técnico empresarial.',
   },
   {
     bg: 'linear-gradient(135deg, #001f4d 0%, #003580 100%)',
     logo: '/logooficials.png',
     name: 'Repacmar',
     url: 'https://repacmar.cl',
-    tags: ['E-Commerce', 'Web'],
+    tag: 'E-COMMERCE',
+    tagClass: '',
+    desc: 'Boutique náutica con +25 años distribuyendo repuestos y accesorios para embarcaciones en Puerto Montt.',
   },
   {
     bg: 'linear-gradient(135deg, #7c4a00 0%, #c47a00 100%)',
     logo: '/fidaltec.png',
     name: 'FidalTec',
     url: 'https://fidaltec.cl',
-    tags: ['Web Corporativa', 'App'],
+    tag: 'INDUSTRIAL',
+    tagClass: '',
+    desc: 'Sitio corporativo con catálogo de productos industriales y sistema de cotizaciones online.',
   },
   {
     bg: 'linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%)',
     logo: '/image3.png',
-    name: 'Proyecto 6',
+    name: 'Cia. Bomberos Nº6',
     url: 'https://cvera1.pythonanywhere.com/',
-    tags: ['Python', 'Web App'],
+    tag: 'SISTEMA',
+    tagClass: 'pf-tag-red',
+    desc: 'Sistema web de gestión interna para la Compañía de Bomberos N°6 de Puerto Montt.',
   },
 ]
 
@@ -35,7 +53,7 @@ export default function Portfolio() {
       <div className="container">
         <div className="heading_container heading_center reveal">
           <h2>Nuestro <span className="gradient-text">Portafolio</span></h2>
-          <p>Proyectos reales que generan resultados reales</p>
+          <p>Proyectos que hablan por sí solos</p>
         </div>
         <div className="row mt-4">
           {projects.map((p, i) => (
@@ -46,13 +64,11 @@ export default function Portfolio() {
                 </div>
                 <div className="pf-footer">
                   <span className="pf-name">{p.name}</span>
-                  <div className="pf-tags">
-                    {p.tags.map((t, j) => <span key={j} className="pf-tag">{t}</span>)}
-                  </div>
+                  <span className={`pf-tag ${p.tagClass}`}>{p.tag}</span>
                 </div>
                 <a href={p.url} target="_blank" rel="noreferrer" className="pf-hover">
-                  <i className="fa fa-external-link"></i>
-                  <span>Ver Proyecto</span>
+                  <p>{p.desc}</p>
+                  <span className="pf-link">Ver sitio <i className="fa fa-external-link"></i></span>
                 </a>
               </div>
             </div>
